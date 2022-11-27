@@ -5,7 +5,7 @@ from apps.nutrition.serializers import NutritionDiarySerializer
 
 
 class NutritionDiaryViewSet(ModelViewSet):
-    queryset = NutritionDiary.objects.all().order_by_date()
+    queryset = NutritionDiary.objects.all().order_by("date")
     serializer_class = NutritionDiarySerializer
 
     def get_queryset(self):

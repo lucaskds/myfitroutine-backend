@@ -5,7 +5,7 @@ from apps.train.serializers import WorkoutDiarySerializer
 
 
 class WorkoutDiaryViewSet(ModelViewSet):
-    queryset = WorkoutDiary.objects.all().order_by_date()
+    queryset = WorkoutDiary.objects.all().order_by("date")
     serializer_class = WorkoutDiarySerializer
 
     def get_queryset(self):
