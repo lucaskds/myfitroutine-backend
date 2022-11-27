@@ -10,8 +10,8 @@ app_name = "nutrition"
 
 router = routers.SimpleRouter()
 
-router.register("food/item", FoodItemViewSet, basename="nutrition")
-router.register("food/category", FoodCategoryViewSet, basename="nutrition")
-router.register("diary", NutritionDiaryViewSet, basename="nutrition")
+router.register("food/item", FoodItemViewSet)
+router.register("food/category", FoodCategoryViewSet)
+router.register("diary", NutritionDiaryViewSet)
 
 urlpatterns = [] + router.urls
