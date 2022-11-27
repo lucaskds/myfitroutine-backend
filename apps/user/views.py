@@ -1,8 +1,9 @@
-from rest_framework.generics import CreateAPIView
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import AllowAny
-from apps.user.serializers import UserSerializer, RegisterSerializer
 from django.contrib.auth.models import User
+from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import AllowAny
+from rest_framework.viewsets import ModelViewSet
+
+from apps.user.serializers import RegisterSerializer, UserSerializer
 
 
 class UserViewSet(ModelViewSet):

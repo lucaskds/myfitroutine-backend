@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.nutrition.models import FoodItem, FoodCategory
+from apps.nutrition.models import FoodCategory, FoodItem
 
 
 class FoodCategorySerializer(serializers.ModelSerializer):

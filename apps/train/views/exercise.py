@@ -2,8 +2,8 @@ from rest_framework.viewsets import ModelViewSet
 
 from apps.train.models import Exercise, ExerciseGroup, ExerciseSet
 from apps.train.serializers import (
-    ExerciseSerializer,
     ExerciseGroupSerializer,
+    ExerciseSerializer,
     ExerciseSetSerializer,
 )
 

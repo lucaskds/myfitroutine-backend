@@ -1,9 +1,9 @@
 from rest_framework import routers
 
 from apps.train.views import (
-    ExerciseViewSet,
     ExerciseGroupViewSet,
     ExerciseSetViewSet,
+    ExerciseViewSet,
     WorkoutViewSet,
 )
 

@@ -1,10 +1,11 @@
 from rest_framework.viewsets import ModelViewSet
+
+from apps.nutrition.models import FoodCategory, FoodItem, NutritionDiary
 from apps.nutrition.serializers import (
     FoodCategorySerializer,
     FoodItemSerializer,
     NutritionDiarySerializer,
 )
-from apps.nutrition.models import FoodCategory, FoodItem, NutritionDiary
 
 
 class FoodCategoryViewSet(ModelViewSet):

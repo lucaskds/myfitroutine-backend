@@ -1,2 +1,2 @@
-from .exercise import ExerciseViewSet, ExerciseGroupViewSet, ExerciseSetViewSet
+from .exercise import ExerciseGroupViewSet, ExerciseSetViewSet, ExerciseViewSet
 from .workout import WorkoutViewSet

@@ -1,2 +1,2 @@
-from .food_item import FoodItemSerializer, FoodCategorySerializer
 from .diary import NutritionDiarySerializer
+from .food_item import FoodCategorySerializer, FoodItemSerializer

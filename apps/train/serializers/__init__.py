@@ -1,2 +1,2 @@
+from .exercise import ExerciseGroupSerializer, ExerciseSerializer, ExerciseSetSerializer
 from .workout import WorkoutPlanSerializer
-from .exercise import ExerciseSerializer, ExerciseGroupSerializer, ExerciseSetSerializer
