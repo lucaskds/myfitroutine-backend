@@ -5,4 +5,4 @@ from django.db import models
 class NutritionDiary(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     date = models.DateField()
-    entry = models.JSONField()
+    entry = models.JSONField(default=list)
