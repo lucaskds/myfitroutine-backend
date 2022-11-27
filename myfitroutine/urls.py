@@ -21,6 +21,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from apps.user.views import RegisterView
 
 urlpatterns = [
     # re_path(r"^$", generic.RedirectView.as_view(url="/api/", permanent=False)),
@@ -28,15 +29,19 @@ urlpatterns = [
     re_path(r"^api/auth/", include("rest_framework.urls", namespace="rest_framework")),
     re_path(r"^api/auth/token/obtain/$", TokenObtainPairView.as_view()),
     re_path(r"^api/auth/token/refresh/$", TokenRefreshView.as_view()),
+    re_path(r"^api/register/", RegisterView.as_view(), name="auth_register"),
 ]
 
 urlpatterns += [
-    path("admin/", admin.site.urls),
+    re_path(r"^admin/", admin.site.urls),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += [
-    path("accounts/", include("django.contrib.auth.urls")),
+    re_path(r"^accounts/", include("django.contrib.auth.urls")),
 ]
 urlpatterns += [
-    path("api/training/", include("apps.train.urls")),
+    re_path(r"^api/users/", include("apps.user.urls")),
+]
+urlpatterns += [
+    re_path(r"^api/training/", include("apps.train.urls")),
 ]
