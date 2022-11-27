@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "apps.train",
     "apps.user",
+    "apps.train",
+    "apps.nutrition",
 ]
 
 MIDDLEWARE = [
