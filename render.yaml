@@ -1,0 +1,22 @@
+databases:
+  - name: myfitroutine
+    plan: free
+    databaseName: myfitroutine
+    user: myfitroutine
+
+services:
+  - type: web
+    name: myfitroutine
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn myfitroutine.wsgi --reload"
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: myfitroutine
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
