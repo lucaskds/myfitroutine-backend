@@ -14,5 +14,5 @@ class WorkoutDiaryViewSet(ModelViewSet):
         return queryset
 
     def create(self, request, *args, **kwargs):
-        kwargs["user"] = request.user
+        request.data["user"] = request.user.id
         return super().create(request, *args, **kwargs)
