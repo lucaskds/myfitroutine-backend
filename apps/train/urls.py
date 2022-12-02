@@ -1,9 +1,11 @@
 from rest_framework import routers
-
+from django.urls import path
 from apps.train.views import (
     ExerciseGroupViewSet,
     ExerciseSetViewSet,
     ExerciseViewSet,
+    ExerciseCategoryViewSet,
+    ExerciseItemViewSet,
     WorkoutViewSet,
     WorkoutDiaryViewSet,
 )
@@ -19,3 +21,24 @@ router.register("workouts", WorkoutViewSet, basename="workout")
 router.register("diary", WorkoutDiaryViewSet)
 
 urlpatterns = [] + router.urls
+
+urlpatterns += [
+    path(
+        "exercises/item",
+        ExerciseItemViewSet.as_view(
+            {
+                "get": "list",
+            },
+        ),
+        name="exercise-items",
+    ),
+    path(
+        "exercises/category",
+        ExerciseCategoryViewSet.as_view(
+            {
+                "get": "list",
+            },
+        ),
+        name="exercise-categories",
+    ),
+]

@@ -1,10 +1,18 @@
 from rest_framework.viewsets import ModelViewSet
 
-from apps.train.models import Exercise, ExerciseGroup, ExerciseSet
+from apps.train.models import (
+    Exercise,
+    ExerciseGroup,
+    ExerciseSet,
+    ExerciseCategory,
+    ExerciseItem,
+)
 from apps.train.serializers import (
     ExerciseGroupSerializer,
     ExerciseSerializer,
     ExerciseSetSerializer,
+    ExerciseCategorySerializer,
+    ExerciseItemSerializer,
 )
 
 
@@ -14,8 +22,6 @@ class ExerciseViewSet(ModelViewSet):
 
     def get_queryset(self):
         exercise_group = self.request.data.get("exercise_group")
-
-        # if not exercise_group:
 
         query = Exercise.objects.filter(exercise_group=exercise_group)
 
@@ -29,8 +35,6 @@ class ExerciseGroupViewSet(ModelViewSet):
     def get_queryset(self):
         workout_plan = self.request.data.get("workout_plan")
 
-        # if not workout_plan:
-
         query = ExerciseGroup.objects.filter(workout_plan=workout_plan)
 
         return query
@@ -43,8 +47,16 @@ class ExerciseSetViewSet(ModelViewSet):
     def get_queryset(self):
         exercise = self.request.data.get("exercise")
 
-        # if not exercise:
-
         query = ExerciseSet.objects.filter(exercise=exercise)
 
         return query
+
+
+class ExerciseCategoryViewSet(ModelViewSet):
+    queryset = ExerciseCategory.objects.all().order_by("id")
+    serializer_class = ExerciseCategorySerializer
+
+
+class ExerciseItemViewSet(ModelViewSet):
+    queryset = ExerciseItem.objects.all().order_by("label")
+    serializer_class = ExerciseItemSerializer

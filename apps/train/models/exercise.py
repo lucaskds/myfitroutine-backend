@@ -18,3 +18,12 @@ class ExerciseSet(models.Model):
     reps = models.IntegerField()
     rest = models.IntegerField()
     comment = models.TextField(max_length=500, blank=True)
+
+
+class ExerciseCategory(models.Model):
+    label = models.CharField(max_length=256)
+
+
+class ExerciseItem(models.Model):
+    category = models.ForeignKey("ExerciseCategory", on_delete=models.CASCADE)
+    label = models.CharField(max_length=256)
