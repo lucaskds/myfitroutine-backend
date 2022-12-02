@@ -2,17 +2,17 @@ from rest_framework.viewsets import ModelViewSet
 
 from apps.train.models import (
     Exercise,
-    ExerciseGroup,
-    ExerciseSet,
     ExerciseCategory,
+    ExerciseGroup,
     ExerciseItem,
+    ExerciseSet,
 )
 from apps.train.serializers import (
+    ExerciseCategorySerializer,
     ExerciseGroupSerializer,
+    ExerciseItemSerializer,
     ExerciseSerializer,
     ExerciseSetSerializer,
-    ExerciseCategorySerializer,
-    ExerciseItemSerializer,
 )
 
 

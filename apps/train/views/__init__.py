@@ -1,9 +1,9 @@
+from .diary import WorkoutDiaryViewSet
 from .exercise import (
+    ExerciseCategoryViewSet,
     ExerciseGroupViewSet,
+    ExerciseItemViewSet,
     ExerciseSetViewSet,
     ExerciseViewSet,
-    ExerciseCategoryViewSet,
-    ExerciseItemViewSet,
 )
 from .workout import WorkoutViewSet
-from .diary import WorkoutDiaryViewSet

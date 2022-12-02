@@ -1,9 +1,9 @@
+from .diary import WorkoutDiary
 from .exercise import (
     Exercise,
-    ExerciseGroup,
-    ExerciseSet,
     ExerciseCategory,
+    ExerciseGroup,
     ExerciseItem,
+    ExerciseSet,
 )
 from .workout import WorkoutPlan
-from .diary import WorkoutDiary

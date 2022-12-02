@@ -1,13 +1,14 @@
-from rest_framework import routers
 from django.urls import path
+from rest_framework import routers
+
 from apps.train.views import (
+    ExerciseCategoryViewSet,
     ExerciseGroupViewSet,
+    ExerciseItemViewSet,
     ExerciseSetViewSet,
     ExerciseViewSet,
-    ExerciseCategoryViewSet,
-    ExerciseItemViewSet,
-    WorkoutViewSet,
     WorkoutDiaryViewSet,
+    WorkoutViewSet,
 )
 
 app_name = "training"

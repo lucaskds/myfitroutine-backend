@@ -1,9 +1,9 @@
+from .diary import WorkoutDiarySerializer
 from .exercise import (
+    ExerciseCategorySerializer,
     ExerciseGroupSerializer,
+    ExerciseItemSerializer,
     ExerciseSerializer,
     ExerciseSetSerializer,
-    ExerciseCategorySerializer,
-    ExerciseItemSerializer,
 )
 from .workout import WorkoutPlanSerializer
-from .diary import WorkoutDiarySerializer

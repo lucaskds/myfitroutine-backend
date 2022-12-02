@@ -2,10 +2,10 @@ from rest_framework import serializers
 
 from apps.train.models import (
     Exercise,
-    ExerciseGroup,
-    ExerciseSet,
     ExerciseCategory,
+    ExerciseGroup,
     ExerciseItem,
+    ExerciseSet,
 )
 
 

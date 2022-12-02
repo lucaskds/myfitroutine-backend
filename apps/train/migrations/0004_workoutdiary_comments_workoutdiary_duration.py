@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('train', '0003_alter_workoutdiary_entry'),
+        ("train", "0003_alter_workoutdiary_entry"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='workoutdiary',
-            name='comments',
+            model_name="workoutdiary",
+            name="comments",
             field=models.TextField(blank=True, max_length=500),
         ),
         migrations.AddField(
-            model_name='workoutdiary',
-            name='duration',
+            model_name="workoutdiary",
+            name="duration",
             field=models.PositiveIntegerField(default=0),
         ),
     ]
