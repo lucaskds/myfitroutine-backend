@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = "Load TACO info to DB."
 
     def handle(self, *args, **options):
-        file = open(os.path.join(settings.BASE_DIR, "TACO.csv"))
+        file = open(os.path.join(settings.BASE_DIR, "base_data/TACO.csv"))
         read_file = csv.reader(file)
 
         for record in read_file:
