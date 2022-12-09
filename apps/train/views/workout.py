@@ -15,3 +15,7 @@ class WorkoutViewSet(ModelViewSet):
             return self.queryset.filter(label__istartswith=query_param)[:5]
 
         return self.queryset
+
+    def create(self, request, *args, **kwargs):
+        request.data["user"] = request.user.id
+        return super().create(request, *args, **kwargs)

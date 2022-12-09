@@ -17,37 +17,46 @@ from apps.train.serializers import (
 
 
 class ExerciseViewSet(ModelViewSet):
-    queryset = Exercise.objects.all().order_by("id")
+    queryset = Exercise.objects.order_by("id")
     serializer_class = ExerciseSerializer
 
     def get_queryset(self):
-        exercise_group = self.request.data.get("exercise_group")
+        exercise_group = self.request.GET.get("exercise_group")
 
-        query = Exercise.objects.filter(exercise_group=exercise_group)
+        if not exercise_group:
+            return self.queryset
+
+        query = self.queryset.filter(exercise_group=exercise_group)
 
         return query
 
 
 class ExerciseGroupViewSet(ModelViewSet):
-    queryset = ExerciseGroup.objects.all().order_by("id")
+    queryset = ExerciseGroup.objects.order_by("id")
     serializer_class = ExerciseGroupSerializer
 
     def get_queryset(self):
-        workout_plan = self.request.data.get("workout_plan")
+        workout_plan = self.request.GET.get("workout_plan")
 
-        query = ExerciseGroup.objects.filter(workout_plan=workout_plan)
+        if not workout_plan:
+            return self.queryset
+
+        query = self.queryset.filter(workout_plan=workout_plan)
 
         return query
 
 
 class ExerciseSetViewSet(ModelViewSet):
-    queryset = ExerciseSet.objects.all().order_by("id")
+    queryset = ExerciseSet.objects.order_by("id")
     serializer_class = ExerciseSetSerializer
 
     def get_queryset(self):
-        exercise = self.request.data.get("exercise")
+        exercise = self.request.GET.get("exercise")
 
-        query = ExerciseSet.objects.filter(exercise=exercise)
+        if not exercise:
+            return self.queryset
+
+        query = self.queryset.filter(exercise=exercise)
 
         return query
 
